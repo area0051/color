@@ -8,23 +8,7 @@
 </head>
 <body>
     <script>
-        let bgm;
-
-        function preload() {
-            try {
-                if (navigator.onLine) {
-                    bgm = loadSound("受験生へ.mp3", loaded);
-                    bgm.setVolume(0.5);
-                }
-            } catch (e) {
-                console.log(e);
-            }
-        }
-
-        function loaded() {
-            bgm.loop();
-        }
-
+        
         class Panel {
             constructor() {
                 this.x = 0;
@@ -47,6 +31,18 @@
         let clear_flag = 0;
         let count = 0;
         let t = 0;
+        let bgm;
+
+        function preload() {
+            try {
+                if (navigator.onLine) {
+                    bgm = loadSound("https://tentouser.github.io/jsonapi/sounds/amaoto.mp3");
+                    bgm.setVolume(0.5);
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
 
         function setup() {
             createCanvas(600, 400);
